@@ -142,6 +142,24 @@
       </p>
     </div>
   </section>
+  <!-- table -->
+   <section class="container mt-5">
+  <h3 class="text-center">Latest iPhone 15 Videos</h3>
+  <div class="table-responsive">
+    <table class="table table-dark table-striped mt-3" id="videoTable">
+      <thead>
+        <tr>
+          <th>Thumbnail</th>
+          <th>Title</th>
+          <th>Channel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Videos will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
@@ -149,5 +167,35 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const apiKey = "AIzaSyBX5gm0sBlexULAa-FP4DLk_OdD9wOC-oM";
+  const query = "iphone+15";
+  const maxResults = 10;
+  const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=${maxResults}&key=${apiKey}`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const tableBody = document.querySelector("#videoTable tbody");
+      data.items.forEach(item => {
+        const videoTitle = item.snippet.title;
+        const channelTitle = item.snippet.channelTitle;
+        const thumbnailUrl = item.snippet.thumbnails.default.url;
+        const videoUrl = `https://www.youtube.com/watch?v=${item.id.videoId}`;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><a href="${videoUrl}" target="_blank"><img src="${thumbnailUrl}" alt="thumb" class="img-fluid"></a></td>
+          <td><a href="${videoUrl}" target="_blank" class="text-decoration-none text-light">${videoTitle}</a></td>
+          <td>${channelTitle}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    })
+    .catch(error => {
+      console.error("Error fetching YouTube API:", error);
+      document.getElementById("videoTable").innerHTML = "<tr><td colspan='3'>Failed to load videos.</td></tr>";
+    });
+</script>
 </body>
 </html>
