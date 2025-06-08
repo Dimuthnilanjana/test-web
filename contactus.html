@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Dimuth Nilanjana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #0f0f0f, #1a1a2e);
+      color: #ffffff;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #ffffff !important;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .nav-link:hover {
+      color: #00f6ff !important;
+      text-shadow: 0 0 5px #00f6ff;
+    }
+
+    h2, h5 {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      color: #ffffff;
+      margin-top: 100px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 246, 255, 0.2);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: none;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ccc;
+    }
+
+    input:focus, textarea:focus {
+      background-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 5px rgba(0, 246, 255, 0.4);
+      color: #fff;
+    }
+
+    .btn-primary {
+      background: linear-gradient(145deg, #0072ff, #00f6ff);
+      border: none;
+      padding: 10px 25px;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0, 246, 255, 0.6);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(145deg, #00cfff, #00f6ff);
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social-links a {
+      color: #00f6ff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .social-links a:hover {
+      text-shadow: 0 0 10px #00f6ff;
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #0f0f0f;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Dimuth Nilanjana</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navMenu" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutme.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="container">
+    <h2>Get In Touch</h2>
+    <form class="mt-4" action="https://formspree.io/f/your-email-id" method="POST">
+      <div class="mb-3"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+      <div class="mb-3"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
+      <div class="mb-3"><textarea name="message" rows="5" class="form-control" placeholder="How can I help you?" required></textarea></div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+
+    <div class="social-links">
+      <h5>Connect via:</h5>
+      <p>
+        <a href="https://twitter.com/Dimuthnilanjana" target="_blank">Twitter</a> |
+        <a href="https://www.linkedin.com/in/dimuthnilanjana" target="_blank">LinkedIn</a> |
+        <a href="https://www.behance.net/dimuthnilanjana" target="_blank">Behance</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Dimuth Nilanjana. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
